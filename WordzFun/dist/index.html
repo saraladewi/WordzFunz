@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>WordzFunz</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+</head>
+
+<body class="bg-primary text-white ">
+
+<audio id="sound">   
+<source src="music.mp3" />  
+</audio>
+  <header class="bg-warning text-center p-3 mb-5">
+    <h1>WordzFunz</h1>
+  </header>
+  <div class="container text-center">
+
+    <!-- Word & Input -->
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <p class="lead">Type The Given Word Within
+          <span class="text-danger font-weight-bold" id="seconds">20</span> Seconds:</p>
+        <button type="button" class="btn btn-success" id="startButton">Start</button>
+        <h2 class="display-2 mb-5 font-weight-bold" id="current-word">...</h2>
+        <input type="text" class="form-control form-control-lg" placeholder="Start typing..." id="word-input" autofocus>
+        <h4 class="mt-3" id="message"></h4>
+
+        <!-- Time & Score Columns -->
+        <div class="row mt-5">
+          <div class="col-md-6">
+            <h3>Time Left:
+              <span id="time">0</span>
+            </h3>
+          </div>
+          <div class="col-md-6">
+            <h3 id="cumma">Score:
+              <span id="score">0</span>
+            </h3>
+          </div>
+        </div>
+
+        <!-- Instructions -->
+        <div class="row mt-5">
+          <div class="col-md-12">
+            <div class="card card-body bg-warning text-white">
+              <h5 class="font-weight-bold ">Instructions</h5>
+              <p>Type each word in the given amount of seconds to score. To play again, just type the current word. Your score
+                will reset</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>   
+const mySound = document.getElementById("sound");   
+const correctButton = document.getElementById("startButton");   
+correctButton.addEventListener("click", function(){ mySound.play(); });   
+</script> 
+</body>
+
+</html>
